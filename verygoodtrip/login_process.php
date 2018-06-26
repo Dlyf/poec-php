@@ -48,7 +48,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 
         // redirection vers la page d'accueil
-        // header('location:index.php');
+        header('location:index.php');
 
       } else {
         echo 'Utilisateur inconnu ou mot de passe erroné';

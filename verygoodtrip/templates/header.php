@@ -1,6 +1,15 @@
 <?php
 session_start(); // accès à la session ou création
 
+$isUserConnected = false;
+$isUserAdmin = false;
+if (isset($_SESSION['user'])) {
+  $isUserConnected = true; // utilisateur connecté
+  if ($_SESSION['user']['role'] == 'admin') {
+    $isUserAdmin = true; // utilisateur a le statut admin
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -13,11 +22,21 @@ session_start(); // accès à la session ou création
     <nav>
       <ul class="nav">
         <li class="nav-item">
+
+
+
           <a class="nav-link" href="index.php">Accueil</a>
         </li>
+        <?php
+          if ($isUserAdmin) {
+            echo '<li class="nav-item">';
+            echo '<a class="nav-link" href="dashboard.php">Administration</a>';
+          }
+        ?>
+
         <li class="nav-item">
           <?php
-            if (isset($_SESSION['user'])) {
+            if ($isUserConnected) {
               // Si utilisateur connecté on affiché
               // prénom + lien de déconnexion
               echo '<a class="nav-link" href="logout.php">';
