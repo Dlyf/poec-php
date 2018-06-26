@@ -39,6 +39,8 @@ if (isset($_GET['submit'])) $isFormSubmitted = true;
       </select>
       <input type="submit" name="submit" value="Valider">
     </form>
+    <!-- la balise a génère une requête http GET, ici sans paramètres d'url -->
+    <a href="get.php">Reset</a>
 
     <div>
       <?php
