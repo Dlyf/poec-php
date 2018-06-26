@@ -28,16 +28,31 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
       $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       // echo sizeof($users) . ' utilisateur trouvé';
-
       if (sizeof($users) > 0) {
-        echo 'salut cher ' .$users[0]['firstname'];
+        // echo 'salut cher ' .$users[0]['firstname'];
+
+        // IMPORTANT: il faut mémoiriser l'état "identifié"
+        // de l'utilisateur avant la redirection
+        // sinon "on perd" le travail effectué précédemment
+        // dû au fait que le protocole HTTP est stateless (amnésique)
+        // il exoste plusieurs solutions à ce problème comme par exemple
+        // base de données, fichier texte, session...
+
+
+        // Utilisation de la session
+        session_start(); // fonction ouvrant ou reprenant la session
+        $_SESSION['user'] = $users[0]; //stockage de l'utilisateur connecté dans la session
+
+
+
+
+
+        // redirection vers la page d'accueil
+        // header('location:index.php');
+
       } else {
         echo 'Utilisateur inconnu ou mot de passe erroné';
       }
-
-
-
-
 
 
     } catch(PDOException $e) {

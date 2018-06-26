@@ -1,4 +1,8 @@
-<?php include('templates/header.php') ?>
+<?php
+
+include('templates/header.php')
+
+?>
 
 <h1>Very Good Trip</h1>
 
