@@ -1,4 +1,7 @@
-<?php include('templates/header.php') ?>
+<?php
+  include('config.php');
+  include(TEMPLATES_PATH . '\header.php');
+?>
 
 <form action="login_process.php" method="post">
   <input type="email" name="email" placeholder="email">
