@@ -19,5 +19,5 @@ sizeof c'est tester la taille
 HTTP est stateless il est sans état (=amnésique) le protocole http n'a pas de mémoire.
 SESSION visant à créer dans la mémoire vive du serveur de ouvrir une session qui va etre un espace stockage temporaire
 
-// action :réception du traitement de donnée
+// action  : réception du traitement de donnée
 du binding : requete préparé
