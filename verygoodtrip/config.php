@@ -9,7 +9,9 @@
 function db_connect() {
   try {
     $db = new PDO('mysql:host=localhost;dbname=verygoodtrip', 'root', '');
-    // si succès on renvoie l'objet $db
+    $db->exec('SET NAMES utf8'); // paramètre assure l'encodage UTF8 des données transmises par  
+    //$db->exec('SET NAMES utf8');
+   // si succès on renvoie l'objet $db
     return $db;
   } catch(PDOException $e) {
     // si erreur on renvoie null

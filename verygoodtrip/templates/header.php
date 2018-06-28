@@ -23,6 +23,9 @@ if (isset($_SESSION['user'])) {
     <link
       rel="stylesheet"
       href="<?php echo BASE_URL ?>/static/css/bootstrap.min.css">
+      <link
+        rel="stylesheet"
+        href="<?php echo BASE_URL ?>/static/css/styles.css">
   </head>
   <body>
     <nav>

@@ -12,6 +12,7 @@ if (!$isUserAdmin) {
 <h2>Administration du site</h2>
 <ul>
   <li><a href="manager/country/list.php">Pays</a></li>
+  <li><a href="manager/trip/list.php">Voyages</a></li>
 </ul>
 
 

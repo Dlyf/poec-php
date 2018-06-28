@@ -4,7 +4,6 @@ include('../../config.php');
 include('../../templates/header.php');
 
 $db = db_connect();
-var_dump($db);
 
 ?>
 
@@ -16,7 +15,8 @@ var_dump($db);
 
 </form>
 
-<?php include('../../templates/footer.php');
+<?php
+include('../../templates/footer.php');
 
 // traitement du formulaire
 if (isset($_POST['submit'])) {
