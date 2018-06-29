@@ -94,6 +94,24 @@ function deleteTrip($id) {
   return null;
 }
 
+function searchTrip($criteria) {
+  $db = db_connect();
+  if ($db) {
+    $sql = 'SELECT id, title, date_start, date_end, price
+      FROM trip ';
+
+    if (isset($criteria['country'])) {
+      $sql .= ' WHERE country = ' . $criteria['country'];
+    }
+
+
+    $query = $db->prepare($sql);
+    $result = $query->execute();
+    if ($result) {
+      return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+  }
+}
 // tabme: picture
 function insertPicture($trip_id, $path) {
   $db = db_connect();
@@ -124,4 +142,7 @@ function getPicturesByTrip($trip_id) {
   }
 
 }
+
+
+
 ?>

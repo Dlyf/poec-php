@@ -1,10 +1,13 @@
 <?php
 include_once('../../config.php');
+include('../../utility.php');
 include('../../templates/header.php');
 include('../../dbmanager.php');
 $countries = getCountries();
 
 if (isset($_POST['submit'])) {
+  // nettoyage des inputs
+  $cleaned_name = cleanInput($_POST['name']);
   $db = db_connect();
   if ($db) {
     $query = $db->prepare(
@@ -24,12 +27,12 @@ if (isset($_POST['submit'])) {
           :price)
       ');
     $result = $query->execute(array(
-      ':country' => $_POST['country'],
+      ':country' => cleanedInput($_POST['country']),
       ':date_start' => $_POST['date_start'],
       ':date_end' => $_POST['date_end'],
-      ':title' => $_POST['title'],
-      ':description' => $_POST['description'],
-      ':price' => $_POST['price']
+      ':title' => cleanedInput($_POST['title']),
+      ':description' => cleanInput($_POST['description']),
+      ':price' => cleanInput($_POST['price'])
     ));
     if ($result) {
       header('location:list.php');

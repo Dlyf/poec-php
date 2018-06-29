@@ -21,3 +21,8 @@ SESSION visant à créer dans la mémoire vive du serveur de ouvrir une session 
 
 // action  : réception du traitement de donnée
 du binding : requete préparé
+
+validation de donnée
+moteur de recherche
+
+// sécurisé le formulaire voyage title prix descriptif : utility, cleanedInput

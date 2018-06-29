@@ -2,10 +2,10 @@
 //traitement du formulaire ohoto
 include('../../dbmanager.php');
 
-var_dump($_POST);
-echo '<br><br><br>';
-var_dump($_FILES);
-echo '<br><br><br>';
+// var_dump($_POST);
+// echo '<br><br><br>';
+// var_dump($_FILES);
+// echo '<br><br><br>';
 // echo $_SERVER['DOCUMENT_ROOT'];
 
 // déplacement du fichier temporaire
