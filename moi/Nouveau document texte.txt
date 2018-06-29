@@ -1,0 +1,110 @@
+vendors = librairie externe
+
+ça se télécharge plus vite le html
+par convention on met en dernier le js
+min = fichiers moins lourds
+
+framework cest une bibliotheque (jquery) 
+css est pour générer du contenu
+
+pour vérifier = le réseau
+
+qui n'est pas typé = rangé tout est 
+
+informatique est 1 et 0
+
+objet primitif
+href = head 
+modifier les entetes de la page
+
+window il y a pleins d'objet
+
+les fonctionnalités qui construit le cahier de charge
+
+
+lancer une fonction sur un événement
+un trigger
+cibler un élément
+
+Chifoumi : 
+
+1 afficher les règles
+2 choix des utilisateurs
+2 choix  computer cpu (ramdom)
+5 score (user et cpu)
+4 résultat
+3 fonction qui applique les règles
+
+
+<div class="circleIcon1"> test
+</div
+<div class="circleIcon1"> test2
+</div>
+
+var circleIcon1 = document.getElementsByClassName=("circleIcon1");
+
+circleIcon1[0].style?.backgroundColor = "yellow";
+
+var target = document.(selection)("name")
+target.onclick = function () {
+
+}
+
+on récupère le score en id
+parseInt pour transformer en entier
+
+random = un nombre entier entre 1 et 3
+
+bibliotheque javascript
+
+framework : 
+symfony 3 niveaux 
+côté front 
+1) -Js pure ; api natif
+Angular*
+React
+vue 
+
+2) accélérateur de code (framework)
+
+
+pas de cadre 
+côté back
+1) -php pure 
+2) framework 
+
+symfony3*
+laravel
+cake PHP
+code ignite
+zen
+
+CMS des composants de formulaire d'identifiant...  des composants web 
+cms drupal 
+
+flexibilité de transmettre des données à une structure à une autre
+
+git un logiciel de version; y a une erreur et ça ne marche pas 
+et plusieurs fichiers
+git outil qui va permetre de sauvegarder tous les projets
+on le modifie on le sauvegarde
+
+qd c un outil -g 
+en local un logiciel
+
+repertoir, cmd dans explorateur
+
+e2e end to end test final utilisateur  
+
+809 repertories
+
+package.json contient toutes les dépendances du projet 
+
+si pas migrer 
+ça va être lent 
+durée de vie maximale 5 ans front
+en php 7, 8 ... 10
+
+être sur qu'on récupère des informations 
+
+c'est une fonction pour initialiser = constructor

@@ -97,15 +97,37 @@ function deleteTrip($id) {
 function searchTrip($criteria) {
   $db = db_connect();
   if ($db) {
-    $sql = 'SELECT id, title, date_start, date_end, price
-      FROM trip ';
+    $sql = 'SELECT trip.id, country, title,
+      date_start, date_end, price, name AS country_name
+      FROM trip
+      LEFT JOIN country ON trip.country = country.id
+      WHERE trip.id > 0';
 
-    if (isset($criteria['country'])) {
-      $sql .= ' WHERE country = ' . $criteria['country'];
+    if ($criteria['country'] != null) {
+      $sql .= ' AND country = ' . $criteria['country'];
     }
 
+    if ($criteria['date_start'] != null) {
+      // echo '<p>DATE OK</p>';
+      // SQL exige la présence de single cote autour de la date
+      // 2018-08-24   => MAUVAIS
+      // '2018-08-24' => OK
+      $sql .= ' AND date_start >= ' . '\'' . $criteria['date_start'] .'\'';
+    }
 
-    $query = $db->prepare($sql);
+    if ($criteria['date_end'] != null) {
+      // echo '<p>DATE OK</p>';
+      // SQL exige la présence de single cote autour de la date
+      // 2018-08-24   => MAUVAIS
+      // '2018-08-24' => OK
+      $sql .= ' AND date_end <= ' . '\'' . $criteria['date_end'] .'\'';
+    }
+
+    if ($criteria['price'] != null) {
+      $sql .= ' AND price < ' . $criteria['price'];
+    }
+
+    $query  = $db->prepare($sql);
     $result = $query->execute();
     if ($result) {
       return $query->fetchAll(PDO::FETCH_ASSOC);

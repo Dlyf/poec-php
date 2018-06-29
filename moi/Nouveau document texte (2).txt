@@ -1,0 +1,434 @@
+type dom objet element;
+
+
+var item = document.getElementById('test'); 
+var bg = item.style.backgroundColor;
+var height = item.height;
+
+DOM 
+structuration d'une appli
+ajax, promesses, Asynchronie,
+Intro frameworks JS
+
+des fichiers statiques
+
+inline style 
+
+
+document.getElementById('title').innerText = title;
+
+code procédurale
+
+avantage du code; 
+
+aspect semantique
+réutilisabilité, on peut reservir ailleur dans le code
+
+console.log('if: ' + display);
+console.log('else:' + display);
+
+
+//opérateur ternaire quand on a qu'une instruction qui a déclenché
+si c vrai ? si c faux
+
+var l = console.log;
+
+détruire la précédente version ...
+
+    if(config.students[i].age)
+      s += config.students[i].age;
+= pour une seule instruction
+
+responsive : s'adapte à la dimension de la fenêtre
+
+children : correspond aux tableaux des enfants
+
+value = ça sert à distig
+
+this c'est le context, réf
+
+indexOf
+substr 
+
+"tester le comportement e la machine"
+"je teste avec la valeur angular"
+
+change est dédié aux cliques à un menu de sélection
+
+function add(v1; v2) {
+	return v1 + v2;
+
+console.log(add(7,13));
+
+ES 6 :
+
+var mult = (v1, v2) => v1 * v2;
+
+console.log(mult(7,13));
+
+
+var mult = (v1, v2) => {
+	console.lo('Multication');
+	return v1*v2;
+}
+
+var square = x => x*x;
+
+BabelJS : il convertit ES 6 en ES5
+
+Asynchrome : on initie un départ d'exécution mais on ne sait pas quand la réponse va nous parvenir. des séquences non bloquantes
+
+Parallélisme : des choses qui s'exécute en parallèle
+
+Ajax : requète qui st destinés à un serveur (intérrogé) doont on ne sait pas quand la réponse va avoir lieu.
+
+(function() {}) () = protéger des collisions variables (ou de nom)
+
+fonction autoexécutables
+
+pattern
+
+fetch permet de faire une requête ajax
+
+promesse :
+
+const promise : dans le language js, il existe une classe, un objet, opérateur d'instanciation  
+2 fctions anonyme qu'on va appeler
+resolve on appelle success
+then méthode incluse dans l'objet promesse qui va permettre de brancher à la méthode resolve 
+le then se connectera le résultat de la fonction resolve()
+je me connecte à la fonction de success et j'exécute un callback 
+catch permet de recevoir un echec
+
+// étape1 , conception de la promesse
+const promise = new Promise((resolve, reject) =>  {
+  
+  if(4 > 3) {
+    resolve();
+
+  } else {
+    reject();
+  }
+  
+})
+
+// étape2 , traitement
+promise
+  .then(() => console.log('success'))
+  .catch(() => console.log('failure'))
+
+dans le cas d'asynchrome : 
+
+// étape1 , conception de la promesse
+const promise = new Promise((resolve, reject) =>  {
+  
+  setTimeout(() => {
+    resolve();
+  }, 5000)
+  
+    setTimeout(() => {
+    reject();
+  }, 3000)
+})
+
+// étape2 , traitement
+promise
+  .then(() => console.log('success'))
+  .catch(() => console.log('failure'))
+
+promise chaining
+
+// étape1 , conception de la promesse
+/* const promise = new Promise((resolve, reject) =>  {
+  
+  setTimeout(() => {
+    resolve();
+  }, 5000)
+  
+    setTimeout(() => {
+    reject();
+  }, 3000)
+})
+
+// étape2 , traitement
+promise
+  .then(() => console.log('success'))
+  .catch(() => console.log('failure')) 
+  */
+
+//sans asynchronie
+const add = (a, b) => {
+  return new Promise((resolve, reject) => {
+    let sum = a + b;
+    let obj = {
+      val: sum,
+      cube: () => {
+        return cube(sum)
+      }
+    }
+    resolve(obj)
+  })
+}
+
+//avec asynchronie 
+const cube = (x) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(x*x*x)
+    }, 3000)
+  })
+}
+
+//add(7,3).then((res) => console.log(res))
+//add(5,3).then((res) => console.log(res))
+//cube(5).then((res) => console.log(res))
+
+add(2,3)
+  .then((res) => res.cube())
+  .then((res) => console.log(res))
+
+
+Os communiquer avec différents matériels
+un driver est un traducteu, un logiciel qui va traduire une carte son, etc......
+
+mettre développeur junior
+mettre ttes les techno,
+personnaliser et remonter les techno
+
+en esn, 10-15 développeurs
+
+cli, on peut lancer un projet, installer via commande
+
+gitignore, 
+
+Développeur Junior Web 
+compétences  JavaScript (ES5, ES6+)
+php 7.x	     HTML5/CSS3 	
+symfony 3     jQuery	
+angular 2+ ou 6 
+sql
+
+
+var est dans une fonction
+
+APO = bloc, cet objet va contenir un age, une taille, un nom, et le bloc est un ensemble d'information (eleve) c'est un objet
+heap = zone de mémoire
+
+fichier avec des infos respectant le fichier classe 
+adrien est une instance de Eleve (= instance de quelque chose)
+Adrien est un objet
+
+domaine = valeur possible 
+this = au moment de l'objet, du fichier
+typescript = javascript 
+typage : variable, nbre, string
+function ....(parametre a,b)
+
+addition(argument)
+/**
+ * documentation avant la fonction
+
+référence vers un objet  ---- > raccourcie vers un fichier
+
+let adrien 
+ */
+
+
+
+commerciale on utilise et on paie
+libre on utilise 
+open source acces au code source, n'a pas le droit de modifier
+
+6 version majeure 0 mineur ça peut changer 
+
+un serveur est un programme qui va réceptionner des fichiers
+
+l'os communique avec les matériels informatiques 
+le port : lancer un serveur et enregistre auprès de l'os exemple 4000
+port par défaut 80 sur google .fr
+génère des fichiers http : un client http
+
+port 80
+url 
+
+tslint : va vérifier un programme propre (chaine des caractères....,)
+
+test unitaire = pour valider des codes (TDD)
+
+TestDivisionNombreNomber() {
+	let resultat = division(9, 3);
+	if (resultat == 3) {
+	log("ok");
+	}
+
+TestDivisionNombreNomber() {
+	let resultat = division(9, 0);
+	if (resultat != erreur) {
+	log("pas ok");
+	}
+}
+
+TestDivisionNombreNomber() {
+	let resultat = division(0, 9);
+	if (resultat != 0) {
+	log("ok");
+	}
+}
+
+class Eleve {
+    age: number;
+    nom: string;
+    vitesse = 0;
+
+    courir() {
+        this.vitesse = 20;
+
+    }
+}
+
+let adrien = new Eleve();
+
+adrien.age = 36;
+
+asynchrome : se partager les tâches
+file d'exécution c est quelqu un qui attend et qui exécute
+
+c'est un programme il prends tous les fichiers et se transforme en une seule fichier js
+
+routage : simuler des pages
+
+wireframe : 
+route et composant
+c'est une url qui va afficher à un endroit
+
+cadre de travail des cotnraintes à respecter  : framework
+react : bibliotheque y a une fonction comme jquery, une façon d'utiliser gros conteneur et si quelqu'un a besoin il va récupérer... contenur de sauvegarde
+
+les composants, routages
+
+service est une classe utilitaire
+
+ng model 
+ng submit
+
+base de donnée 
+c'est un ensemble de table 
+de ligne
+
+ce mysql tt ce qui est language de requete
+
+champ = fields 
+
+se divise en 4 groupes : 
+
+intégrité de données : si c'est sur de stocker des données
+INt edium int  16 millions 3 
+tiny int 0 a 255 256 possibilités
+long int 4 milliards
+big int 8 octet 2 puissance 64 
+
+char 1 caractère... 10 caracteres 
+varchar 20 caracteres
+
+float : 13 chiffres aprés la virgule
+double 20 
+l acapacité à afficher : binaires
+
+les limitees
+text dépasse de 255 caracterese des qu'on a des sauts de ligne
+
+clé primaire est unique et le point d'entré dans votre système, n'es pas numérique 
+le champ doit comporter une valeur pour qu'elle soit enregistrée not nul
+unique 
+unsigned un entier qui est signé va de + a - 
+zero fill remplir le zéo 
+clé étrangère 
+
+cardinalié : quantité sur les liens 
+0..1
+1
+0..n
+
+il va prendre une certaine valeur : défault
+
+date de création
+date de modification 
+
+count = compter toutes les colonnes non null 
+prennnent un ensemble de donnée et agrège a un résultat = fonction agrégation
+substring = récupérer d une chaine de sous chaine
+
+regex = 
+LIKE '%vous%' = enlever avant et après 
+
+OR message LIKE '%ROBIN%'
+
+REGEXP 'Robin.*vous'
+     insensitive 
+casse sensitive
+
+pour les likes les recherches ou du tri
+dans les tri = intérêt de collation 
+
+histoire d'accebt
+
+internationalisation = utf8 mb4 ci
+ça agrege les données
+ça renvoie 1 ligne
+
+update delete = mettre un where (ça agit sur tte la table si pas de where)
+
+tu auras tjrs uniquement les relations
+
+groupe by fonctionne la fonction d'agrégation 
+where est tjrs avant le group by
+having est aprés 
+
+DML ttes les instructions CREATE, DROP,... vont sistematiquement faire du commit
+
+PHP ASP microsoft propre server JSP 
+PHP langage côté serveur créé en 1995  
+node js et python langage conseillé
+
+.size
+
+foreach=
+élément ittérable 
+nom du variable que chaque passage reçoit le joueur 
+
+un document bien formé quand on ajoute index
+
+POST va caché les valeurs transmises
+qd on fait une requete en post c'est la superglobal qui va être alimenter
+$_GET : url avec param c'est un tableau associatif
+lors de la requete http chacun de ce nom sera utilisé comme clé associatif
+clé = valeur
+le passage à un autre paramèetre = &
+
+va dans l url et trouve la clé submit, il continue l etraitement
+
+requête $_GET
+
+par le biais d'un formulaire $_POST
+
+faut notifier le serveur pour choisir 
+
+j'adresse une nouvelle requete get qui s'adresse à l'adresse get.php
+toutes les valeurs 
+
+il constitue le chemin de l'image
+dynamique = on peut faire de la programmation
+
+la balise a = genere des requete http get 
+l'objet peut accéder à          un regroupement de propriété et de méthode 
+
+prépare = des requetes en écritures méthode qui est proposé par l'objet pdo 
+
+placeholder on va s'embeter à faire une concat 
+sql injection  ":" = case vide
+
+fech all :transformer les lines sql en structure tableau php
+il renvoie une ligne = 1 row
+constante de classe en parametre d'entrée fetch all
+num, assoc
+
