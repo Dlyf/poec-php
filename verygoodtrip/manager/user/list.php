@@ -3,11 +3,11 @@ require_once('../../dbmanager.php');
 include('../../templates/header.php');
 
 // récupération des utilisateurs
-$users = getUsers();  
+$users = getUsers();
 ?>
 
 <h2>Liste des utilisateurs</h2>
-
+<a class="btn btn-primary btn-sm" href="add.php">Ajouter un utilisateur</a>
 <table class="table table-bordered table-striped">
   <tr>
     <th>Nom</th>
