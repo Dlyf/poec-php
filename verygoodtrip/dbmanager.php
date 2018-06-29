@@ -165,6 +165,23 @@ function getPicturesByTrip($trip_id) {
 
 }
 
+// table : utilisateurs
+// table: country
+function getUsers() {
+  $db = db_connect();
+  $users = null;
+  if ($db) {
+    $query = $db->prepare(
+      'SELECT * FROM user ORDER BY firstname, lastname ASC');
+    $result = $query->execute();
+    if ($result) {
+      $users = $query->fetchAll(PDO::FETCH_ASSOC);
+      return $users;
+    }
+  }
+  return $users;
+}
+
 
 
 ?>

@@ -79,7 +79,7 @@ if (isset($_GET['submit'])) {
     </tr>
     <?php foreach ($trips as $trip): ?>
       <tr>
-        <td><?php echo $trip['title'] ?></td>
+        <td><a href="trip_detail.php?id=<?php echo $trip['id'] ?>"> <?php echo $trip['title'] ?></a></td>
         <td><?php echo $trip['country_name'] ?></td>
         <td><?php  echo 'Du ' . transformSQLDate($trip['date_start']);
             echo ' au ' . transformSQLDate($trip['date_end']); ?></td>

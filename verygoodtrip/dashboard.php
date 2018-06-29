@@ -13,6 +13,7 @@ if (!$isUserAdmin) {
 <ul>
   <li><a href="manager/country/list.php">Pays</a></li>
   <li><a href="manager/trip/list.php">Voyages</a></li>
+  <li><a href="manager/user/list.php">Utilisateurs</a></li>
 </ul>
 
 
