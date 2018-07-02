@@ -18,7 +18,6 @@
     $trip = getTripById($_GET['id']);
     $pictures = getPicturesByTrip($_GET['id']);
 
-
   }
 
 ?>

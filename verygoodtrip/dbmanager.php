@@ -166,7 +166,6 @@ function getPicturesByTrip($trip_id) {
 }
 
 // table : utilisateurs
-// table: country
 function getUsers() {
   $db = db_connect();
   $users = null;
@@ -182,6 +181,52 @@ function getUsers() {
   return $users;
 }
 
+function getUserById($id) {
+  $db = db_connect();
+  if($db) {
+    $query = $db->prepare(
+      'SELECT * FROM user WHERE id = :id');
+    $result = $query->execute(array(':id' => $id));
+    if ($result) {
+      return $query->fetch(PDO::FETCH_ASSOC);
+    }
+  }
+  return null;
+}
 
+function updateUser($id, $data) {
+  $db = db_connect();
+  if ($db) {
+    $query = $db->prepare(
+      'UPDATE user
+          SET firstname   = :firstname,
+              lastname    = :lastname,
+              email       = :email,
+              password    = :password,
+              role        = :role
 
+        WHERE id          = :id
+      ');
+    $result = $query->execute(array(
+      ':id'           => $id,
+      ':firstname'    => $data['firstname'],
+      ':lastname'     => $data['lastname'],
+      ':email'        => $data['email '],
+      ':password'     => $data['password'],
+      ':role'         => $data['role']
+    ));
+    return $result;
+  }
+  return null;
+}
+
+function deleteUser($id) {
+  $db = db_connect();
+  if ($db) {
+    $query = $db->prepare('DELETE FROM user WHERE id = :id');
+    $result = $query->execute(array(':id' => $id));
+    return $result;
+  }
+  return null;
+}
 ?>
