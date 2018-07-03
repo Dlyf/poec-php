@@ -25,10 +25,12 @@ $trips = getTrips($full = false); // équivalent à getTrips(false)
           <td>
             <a
               class="btn btn-primary btn-sm"
-              href="edit.php?id=<?php echo $trip['id'] ?>">Editer</a>
+              href="edit.php?id=<?php echo $trip['id'] ?>">Editer
+            </a>
             <a
               class="btn btn-danger btn-sm"
-              href="delete.php?id=<?php echo $trip['id'] ?>">Supprimer</a>
+              href="delete.php?id=<?php echo $trip['id'] ?>">Supprimer
+            </a>
           </td>
     </tr>
   <?php endforeach; ?>

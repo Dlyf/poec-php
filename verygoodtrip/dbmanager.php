@@ -211,7 +211,7 @@ function updateUser($id, $data) {
       ':id'           => $id,
       ':firstname'    => $data['firstname'],
       ':lastname'     => $data['lastname'],
-      ':email'        => $data['email '],
+      ':email'        => $data['email'],
       ':password'     => $data['password'],
       ':role'         => $data['role']
     ));
