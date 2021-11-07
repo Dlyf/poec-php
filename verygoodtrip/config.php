@@ -1,10 +1,10 @@
 <?php
   // déclaration de constantes
   define('TEMPLATES_PATH',
-    'C:\xampp\htdocs\php-bases\verygoodtrip\templates');
+    'C:\xampp\htdocs\poec-php\verygoodtrip\templates');
 
   define('BASE_URL',
-    'http://localhost/php-bases/verygoodtrip');
+    'http://localhost/poec-php/verygoodtrip');
 
 function db_connect() {
   try {
